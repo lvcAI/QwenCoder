@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>孩子成长记录表</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>👶 孩子成长记录表</h1>
+            <p>记录孩子各个阶段的生长发育情况</p>
+        </header>
+
+        <main>
+            <section class="child-info">
+                <h2>孩子信息</h2>
+                <div class="form-group">
+                    <label for="childName">姓名：</label>
+                    <input type="text" id="childName" placeholder="请输入孩子姓名">
+                </div>
+                <div class="form-group">
+                    <label for="childGender">性别：</label>
+                    <select id="childGender">
+                        <option value="male">男</option>
+                        <option value="female">女</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="childBirthDate">出生日期：</label>
+                    <input type="date" id="childBirthDate">
+                </div>
+            </section>
+
+            <section class="growth-record">
+                <h2>生长记录</h2>
+                <div class="form-group">
+                    <label for="recordDate">记录日期：</label>
+                    <input type="date" id="recordDate" value="">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="height">身高 (cm)：</label>
+                        <input type="number" id="height" step="0.1" placeholder="例如：85.5">
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">体重 (kg)：</label>
+                        <input type="number" id="weight" step="0.1" placeholder="例如：12.3">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="headCircumference">头围 (cm)：</label>
+                    <input type="number" id="headCircumference" step="0.1" placeholder="例如：48.2">
+                </div>
+                <button id="addRecordBtn" class="btn-primary">添加记录</button>
+            </section>
+
+            <section class="growth-chart">
+                <h2>生长曲线图</h2>
+                <div class="chart-container">
+                    <canvas id="growthChart"></canvas>
+                </div>
+            </section>
+
+            <section class="records-list">
+                <h2>记录列表</h2>
+                <div class="table-container">
+                    <table id="recordsTable">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>年龄</th>
+                                <th>身高 (cm)</th>
+                                <th>体重 (kg)</th>
+                                <th>头围 (cm)</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recordsTableBody">
+                            <!-- 记录将通过JavaScript动态添加 -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="growth_standards.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
